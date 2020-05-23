@@ -10,7 +10,8 @@
             "width": 82,
             "top": 20,
             "left": 70,
-            "link": "none"
+            "link": "none",
+            "pause": false
         },
         {
             "name": "identify",
@@ -19,7 +20,8 @@
             "width": 82,
             "top": 120,
             "left": 70,
-            "link": "none"
+            "link": "none",
+            "pause": false
         },
         {
             "name": "present",
@@ -28,7 +30,8 @@
             "width": 82,
             "top": 235,
             "left": 70,
-            "link": "none"
+            "link": "none",
+            "pause": false
         },
         {
             "name": "trial",
@@ -37,7 +40,8 @@
             "width": 82,
             "top": 335,
             "left": 70,
-            "link": "none"
+            "link": "none",
+            "pause": false
         },
         {
             "name": "handle",
@@ -46,7 +50,8 @@
             "width": 82,
             "top": 445,
             "left": 70,
-            "link": "none"
+            "link": "none",
+            "pause": false
         },
         {
             "name": "close",
@@ -55,7 +60,8 @@
             "width": 82,
             "top": 545,
             "left": 70,
-            "link": "none"
+            "link": "none",
+            "pause": false
         },
         {
             "name": "continue",
@@ -64,7 +70,8 @@
             "width": 304,
             "top": 315,
             "left": 488,
-            "link": "chapter2"
+            "link": "chapter2",
+            "pause": false
         }
     ]
 
