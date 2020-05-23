@@ -115,7 +115,7 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
     <h1 id="reporter" class="text-center">Our Video Styles</h1>
 </section>
 <?php include("../../../includes/footer_b4.php"); ?>
-<script async src="talking-heads-player.js"></script>
+<script async src="js/talking-heads-player.js"></script>
 <script async  src="js/form.js"></script>
 <script>
 		$( document ).ready( function () {

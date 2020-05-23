@@ -6,62 +6,62 @@
         {
             "name": "greet",
             "time": 15,
-            "height": 82,
-            "width": 82,
-            "top": 20,
-            "left": 70,
+            "height": 12.5,
+            "width": 8.333,
+            "top": 2.08,
+            "left": 4.69,
             "link": "none",
-            "pause": false
+            "pause": true
         },
         {
             "name": "identify",
             "time": 18,
-            "height": 82,
-            "width": 82,
-            "top": 120,
-            "left": 70,
+            "height": 12.5,
+            "width": 8.333,
+            "top": 16.66,
+            "left": 4.69,
             "link": "none",
-            "pause": false
+            "pause": true
         },
         {
             "name": "present",
             "time": 21.2,
-            "height": 82,
-            "width": 82,
+            "height": 12.5,
+            "width": 8.333,
             "top": 235,
-            "left": 70,
+            "left": 4.69,
             "link": "none",
-            "pause": false
+            "pause": true
         },
         {
             "name": "trial",
             "time": 23.5,
-            "height": 82,
-            "width": 82,
+            "height": 12.5,
+            "width": 8.333,
             "top": 335,
-            "left": 70,
+            "left": 4.69,
             "link": "none",
-            "pause": false
+            "pause": true
         },
         {
             "name": "handle",
             "time": 26.2,
-            "height": 82,
-            "width": 82,
+            "height": 12.5,
+            "width": 8.333,
             "top": 445,
-            "left": 70,
+            "left": 4.69,
             "link": "none",
-            "pause": false
+            "pause": true
         },
         {
             "name": "close",
             "time": 29.1,
-            "height": 82,
-            "width": 82,
+            "height": 12.5,
+            "width": 8.333,
             "top": 545,
-            "left": 70,
+            "left": 4.69,
             "link": "none",
-            "pause": false
+            "pause": true
         },
         {
             "name": "continue",
@@ -71,7 +71,7 @@
             "top": 315,
             "left": 488,
             "link": "chapter2",
-            "pause": false
+            "pause": true
         }
     ]
 

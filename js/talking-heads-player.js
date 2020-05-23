@@ -21,7 +21,7 @@ let talkingHeadsVideo = {
     width: 1280,
     height: 720
 };
-var th = talkingHeadsVideo.player,
+let th = talkingHeadsVideo.player,hotspotID,
     title, curHotspot, hotspot, windowSize, newWidth;
 const progress = $("#progress"),
     volumeBar = $("#volume-bar"),
@@ -348,9 +348,15 @@ function createTalkingHead(autostart, controls, color,chapter) {
     }
 
     function setHotspot(z) {
+		if(talkingHeadsVideo.chapter.hotspots[z].link === "none"){
+			hotspotID = talkingHeadsVideo.chapter.hotspots[z].name;
+		}else{
+			hotspotID = talkingHeadsVideo.chapter.hotspots[z].link;
+		}
+			
         hotspot = $("#player-holder").append($('<div>', {
             class: 'hotspot',
-            id: talkingHeadsVideo.chapter.hotspots[z].link
+            id: hotspotID
         }).css({
             "height": talkingHeadsVideo.chapter.hotspots[z].height + "%",
             "width": talkingHeadsVideo.chapter.hotspots[z].width + "%",
