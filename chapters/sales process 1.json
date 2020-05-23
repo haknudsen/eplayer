@@ -15,7 +15,7 @@
         },
         {
             "name": "identify",
-            "time": 18,
+            "time": 17.5,
             "height": 12.5,
             "width": 8.333,
             "top": 16.66,
@@ -28,7 +28,7 @@
             "time": 21.2,
             "height": 12.5,
             "width": 8.333,
-            "top": 235,
+            "top": 30.5,
             "left": 4.69,
             "link": "none",
             "pause": true
@@ -38,7 +38,7 @@
             "time": 23.5,
             "height": 12.5,
             "width": 8.333,
-            "top": 335,
+            "top": 46.66,
             "left": 4.69,
             "link": "none",
             "pause": true
@@ -48,7 +48,7 @@
             "time": 26.2,
             "height": 12.5,
             "width": 8.333,
-            "top": 445,
+            "top": 61,
             "left": 4.69,
             "link": "none",
             "pause": true
@@ -58,7 +58,7 @@
             "time": 29.1,
             "height": 12.5,
             "width": 8.333,
-            "top": 545,
+            "top": 75,
             "left": 4.69,
             "link": "none",
             "pause": true
@@ -68,8 +68,8 @@
             "time": 30.5,
             "height": 88,
             "width": 304,
-            "top": 315,
-            "left": 488,
+            "top": 44,
+            "left": 38,
             "link": "chapter2",
             "pause": true
         }
