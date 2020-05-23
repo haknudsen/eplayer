@@ -33,7 +33,7 @@ const progress = $("#progress"),
     process = $("#elearning-process"),
     chapterPath = "chapters/";
 
-function createTalkingHead(autostart, controls, color) {
+function createTalkingHead(autostart, controls, color,chapter) {
     //Hotspot creation
     function loadChapter(currentChapter) {
         let json = (function () {
@@ -54,7 +54,7 @@ function createTalkingHead(autostart, controls, color) {
         curHotspot = 0;
         restartBar();
     }
-    loadChapter("chapter1");
+    loadChapter(chapter);
     talkingHeadsVideo.portrait = window.matchMedia("(orientation: portrait)");
     talkingHeadsVideo.landscape = window.matchMedia("(orientation: landscape)");
     talkingHeadsVideo.showForm = false;
