@@ -1,0 +1,71 @@
+[{
+    "id": 1,
+    "title": "Learn the Steps",
+    "video": "best-practices-steps",
+    "hotspots": [
+        {
+            "name": "greet",
+            "time": 15,
+            "height": 82,
+            "width": 82,
+            "top": 20,
+            "left": 70,
+            "link": "none"
+        },
+        {
+            "name": "identify",
+            "time": 18,
+            "height": 82,
+            "width": 82,
+            "top": 120,
+            "left": 70,
+            "link": "none"
+        },
+        {
+            "name": "present",
+            "time": 21.2,
+            "height": 82,
+            "width": 82,
+            "top": 235,
+            "left": 70,
+            "link": "none"
+        },
+        {
+            "name": "trial",
+            "time": 23.5,
+            "height": 82,
+            "width": 82,
+            "top": 335,
+            "left": 70,
+            "link": "none"
+        },
+        {
+            "name": "handle",
+            "time": 26.2,
+            "height": 82,
+            "width": 82,
+            "top": 445,
+            "left": 70,
+            "link": "none"
+        },
+        {
+            "name": "close",
+            "time": 29.1,
+            "height": 82,
+            "width": 82,
+            "top": 545,
+            "left": 70,
+            "link": "none"
+        },
+        {
+            "name": "continue",
+            "time": 30.5,
+            "height": 88,
+            "width": 304,
+            "top": 315,
+            "left": 488,
+            "link": "chapter2"
+        }
+    ]
+
+}]
