@@ -109,22 +109,29 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
 <section class="container">
   <h2 class="text-center">Sort Test</h2>
   <ul id="simpleList" class="list-group">
-    <li class="list-group-item">This is <a href="http://SortableJS.github.io/Sortable/">Sortable</a></li>
-    <li class="list-group-item">It works with Bootstrap...</li>
-    <li class="list-group-item">...out of the box.</li>
-    <li class="list-group-item">It has support for touch devices.</li>
-    <li class="list-group-item">Just drag some elements around.</li>
+    <li class="list-group-item sortable" id="sort1">This is <a href="http://SortableJS.github.io/Sortable/">Sortable</a></li>
+    <li class="list-group-item sortable" id="sort2">It works with Bootstrap...</li>
+    <li class="list-group-item sortable" id="sort3">...out of the box.</li>
+    <li class="list-group-item sortable" id="sort4">It has support for touch devices.</li>
+    <li class="list-group-item sortable" id="sort5">Just drag some elements around.</li>
+    <li class="list-group-item sortable" id="sort6">Sort this.</li>
   </ul>
+  <div class="text-center my-2">
+    <div id="complete" class="text-center btn btn-primary">DONE</div>
+  </div>
 </section>
 <?php include("../../../includes/footer_b4.php"); ?>
 <script async src="js/talking-heads-player.js"></script> 
 <script async src="js/form.js"></script> 
-<script async src="js/Sortable.min.js"></script> 
+<script src="js/Sortable.min.js"></script> 
 <script async src="js/jquery-sortable.js"></script> 
 <script>
     $( document ).ready( function () {
         createTalkingHead( "yes","mouse","#499FDE", "sales process 1" );
-	Sortable.create(simpleList, { /* options */ });
+	Sortable.create(simpleList, { 
+      animation: 150,
+      easing: "cubic-bezier(1, 0, 0, 1)"
+	});
     } );
 </script>
 </body>

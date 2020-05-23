@@ -277,3 +277,4 @@ p {
     max-height: 720px;
     margin: 0 auto;
 }
+.sortable{cursor: pointer;}
