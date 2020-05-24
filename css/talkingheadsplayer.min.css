@@ -281,5 +281,5 @@ p {
     position: absolute;
 }
 .sortable{cursor: pointer;padding: .5rem}
-.sortable img{max-width: 60px}
+.sortable .img-fluid{max-width: 60px;max-height: 60px}
 .w-35{width:35%!important}

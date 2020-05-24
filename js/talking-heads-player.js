@@ -37,7 +37,6 @@ const progress = $("#progress"),
 function createTalkingHead(autostart, controls, color, chapter) {
   //Hotspot creation
   function loadChapter(currentChapter) {
-    console.log(chapterPath + currentChapter + ".json");
     let json = (function () {
       let json = null;
       $.ajax({
@@ -51,7 +50,6 @@ function createTalkingHead(autostart, controls, color, chapter) {
       });
       return json;
     })();
-    console.log(json);
     title = json[0].video;
     talkingHeadsVideo.chapter = json[0];
     curHotspot = 0;
@@ -358,8 +356,6 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function setSort() {
-    let items = newSort.items[0];
-    console.log(items);
     sort = $("#player-holder").append($('<div>', {
       class: 'list-group',
       id: "simpleList"
@@ -371,11 +367,36 @@ function createTalkingHead(autostart, controls, color, chapter) {
       "width": newSort.width + "%",
       "height": newSort.height + "%"
     }));
-    /*    Sortable.create(simpleList, {
-          animation: 150,
-          easing: "cubic-bezier(1, 0, 0, 1)"
-        });*/
+    let items = newSort.items;
+    let newItems = shuffle(items);
+    let i = 0;
+    while (newItems.length > i) {
+      let lineItem = $("#simpleList").append($("<li>", {
+        class: "list-group-item sortable",
+        id: "list" + i,
+        text: newItems[i].text
+      }));
+      lineItem.innerHTML ='<img src="images/Close.png">';
+      i++;
 
+
+      /*    Sortable.create(simpleList, {
+            animation: 150,
+            easing: "cubic-bezier(1, 0, 0, 1)"
+          });*/
+
+    }
+  }
+
+  function shuffle(sourceArray) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+      var temp = sourceArray[j];
+      sourceArray[j] = sourceArray[i];
+      sourceArray[i] = temp;
+    }
+    return sourceArray;
   }
 
   function setHotspot(z) {
