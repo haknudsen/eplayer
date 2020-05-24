@@ -371,19 +371,15 @@ function createTalkingHead(autostart, controls, color, chapter) {
     let newItems = shuffle(items);
     let i = 0;
     while (newItems.length > i) {
-      let lineItem = $("#simpleList").append($("<li>", {
-        class: "list-group-item sortable",
-        id: "list" + i,
-        text: newItems[i].text
-      }));
-      lineItem.innerHTML ='<img src="images/Close.png">';
+      $("#simpleList").append($('<li class="list-group-item sortable"> ', {}));
+      $("#simpleList").children()[i].innerHTML = '<img class="img-fluid" src="images/' + newItems[i].img + '.png"/> ' + newItems[i].text;
       i++;
 
 
-      /*    Sortable.create(simpleList, {
+          Sortable.create(simpleList, {
             animation: 150,
             easing: "cubic-bezier(1, 0, 0, 1)"
-          });*/
+          });
 
     }
   }
