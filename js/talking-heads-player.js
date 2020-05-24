@@ -2,7 +2,7 @@
 
 // Talking Heads Player version 0.9.1
 ////controls- true,false, mouse
-//  autostart- no, yes, mute
+//  autostart- no, yes
 let talkingHeadsVideo = {
     holder: $("#player-holder"),
     player: $("#talking-head-player"),
@@ -22,7 +22,7 @@ let talkingHeadsVideo = {
     height: 720
 };
 let th = talkingHeadsVideo.player,hotspotID,
-    title, curHotspot, hotspot, windowSize, newWidth;
+    title, curHotspot, hotspot, windowSize, newWidth,sort;
 const progress = $("#progress"),
     volumeBar = $("#volume-bar"),
     holder = talkingHeadsVideo.holder,
@@ -240,6 +240,10 @@ function createTalkingHead(autostart, controls, color,chapter) {
         let progressBar = (player.currentTime / player.duration * 100);
         progress.css("width", progressBar + "%");
         time.text(showTime());
+		if(player.currentTime > talkingHeadsVideo.chapter.sort.time && talkingHeadsVideo.chapter.sort.shown === false){
+			talkingHeadsVideo.chapter.sort.shown = true;
+			setSort();
+		}
         if (curHotspot < talkingHeadsVideo.chapter.hotspots.length) {
             if (player.currentTime > talkingHeadsVideo.chapter.hotspots[curHotspot].time) {
                 if (talkingHeadsVideo.chapter.hotspots[curHotspot].pause) {
@@ -347,14 +351,20 @@ function createTalkingHead(autostart, controls, color,chapter) {
         });
     }
 
-    function setHotspot(z) {
-		if(talkingHeadsVideo.chapter.hotspots[z].link === "none"){
-			hotspotID = talkingHeadsVideo.chapter.hotspots[z].name;
-		}else{
-			hotspotID = talkingHeadsVideo.chapter.hotspots[z].link;
-		}
-			
-        hotspot = $("#player-holder").append($('<div>', {
+    function setSort() {
+		sort = $("#player-holder").append($('<div>', {
+            class: 'list-group',
+            id: "simpleList"
+        }).css({
+            "left": talkingHeadsVideo.chapter.sort.left + "%",
+            "top": talkingHeadsVideo.chapter.sort.top + "%",
+            "bottom": "auto",
+            "right": "auto"
+        }));
+		
+    }
+
+    function setHotspot(z) {hotspot = $("#player-holder").append($('<div>', {
             class: 'hotspot',
             id: hotspotID
         }).css({

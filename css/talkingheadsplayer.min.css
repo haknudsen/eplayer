@@ -277,4 +277,9 @@ p {
     max-height: 720px;
     margin: 0 auto;
 }
-.sortable{cursor: pointer;}
+#simpleList{
+    position: absolute;
+}
+.sortable{cursor: pointer;padding: .5rem}
+.sortable img{max-width: 60px}
+.w-35{width:35%!important}

@@ -106,20 +106,6 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
   <h3 class="text-center text-monospace" id="timeReporter"></h3>
   <h1 id="reporter" class="text-center">Our Video Styles</h1>
 </section>
-<section class="container">
-  <h2 class="text-center">Sort Test</h2>
-  <ul id="simpleList" class="list-group">
-    <li class="list-group-item sortable" id="sort1"><img src="images/Greet.png" class="img-fluid" alt="Greet"> Greet the Customer</li>
-    <li class="list-group-item sortable" id="sort2"><img src="images/Identify Needs.png" class="img-fluid" alt="Identify the Customer's Needs"> Identify the Customer's Needs</li>
-    <li class="list-group-item sortable" id="sort3"><img src="images/Product Presentation.png" class="img-fluid" alt="Present the Product"> Present the Product</li>
-    <li class="list-group-item sortable" id="sort4"><img src="images/Trial Cloase.png" class="img-fluid" alt="Trial Close"> Trial Close</li>
-    <li class="list-group-item sortable" id="sort5"><img src="images/Handle Objections.png" class="img-fluid" alt="Handle Objections"> Handle Objections</li>
-    <li class="list-group-item sortable" id="sort6"><img src="images/close.png" class="img-fluid" alt="Close"> Close</li>
-  </ul>
-  <div class="text-center my-2">
-    <div id="complete" class="text-center btn btn-primary">DONE</div>
-  </div>
-</section>
 <?php include("../../../includes/footer_b4.php"); ?>
 <script async src="js/talking-heads-player.js"></script> 
 <script async src="js/form.js"></script> 
