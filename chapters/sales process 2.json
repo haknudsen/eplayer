@@ -4,7 +4,7 @@
   "video": "Sort Steps",
   "sort": [{
     "time": 0.5,
-    "top": .78,
+    "top": 0.78,
     "left": 9.7,
     "shown": false,
     "items": [{
@@ -14,17 +14,18 @@
       "Trial Close": "Trial Close",
       "Handle Objections": "Handle Objections",
       "Close": "Close"
-
     }]
   }],
-  "hotspots": [{
-    "name": "continue",
-    "time": 5.5,
-    "width": 24.6,
-    "height": 13.5,
-    "top": 43.9,
-    "left": 38,
-    "link": "sales process 2",
-    "pause": false
-  }]
+    "hotspots": [
+        {
+            "name": "continue",
+            "time": 30.5,
+            "width": 24.6,
+            "height": 13.5,
+            "top": 43.9,
+            "left": 38,
+            "link": "sales process 2",
+            "pause": false
+        }
+    ]
 }]

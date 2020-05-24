@@ -25,7 +25,7 @@
         },
         {
             "name": "present",
-            "time": 21.2,
+            "time": 21,
             "height": 12.5,
             "width": 8.333,
             "top": 31,
@@ -35,7 +35,7 @@
         },
         {
             "name": "trial",
-            "time": 23.5,
+            "time": 23,
             "height": 12.5,
             "width": 8.333,
             "top": 46.66,
@@ -45,7 +45,7 @@
         },
         {
             "name": "handle",
-            "time": 26.2,
+            "time": 26,
             "height": 12.5,
             "width": 8.333,
             "top": 61,
@@ -55,7 +55,7 @@
         },
         {
             "name": "close",
-            "time": 29.1,
+            "time": 28.9,
             "height": 12.5,
             "width": 8.333,
             "top": 75,

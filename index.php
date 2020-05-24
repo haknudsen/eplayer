@@ -113,11 +113,7 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
 <script async src="js/jquery-sortable.js"></script> 
 <script>
     $( document ).ready( function () {
-        createTalkingHead( "yes","mouse","#499FDE", "sales process 1" );
-	Sortable.create(simpleList, { 
-      animation: 150,
-      easing: "cubic-bezier(1, 0, 0, 1)"
-	});
+        createTalkingHead( "yes","mouse","#499FDE", "sales process 2" );
     } );
 </script>
 </body>
