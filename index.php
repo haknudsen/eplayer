@@ -109,12 +109,12 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
 <section class="container">
   <h2 class="text-center">Sort Test</h2>
   <ul id="simpleList" class="list-group">
-    <li class="list-group-item sortable" id="sort1">This is <a href="http://SortableJS.github.io/Sortable/">Sortable</a></li>
-    <li class="list-group-item sortable" id="sort2">It works with Bootstrap...</li>
-    <li class="list-group-item sortable" id="sort3">...out of the box.</li>
-    <li class="list-group-item sortable" id="sort4">It has support for touch devices.</li>
-    <li class="list-group-item sortable" id="sort5">Just drag some elements around.</li>
-    <li class="list-group-item sortable" id="sort6">Sort this.</li>
+    <li class="list-group-item sortable" id="sort1"><img src="images/Greet.png" class="img-fluid" alt="Greet"> Greet the Customer</li>
+    <li class="list-group-item sortable" id="sort2"><img src="images/Identify Needs.png" class="img-fluid" alt="Identify the Customer's Needs"> Identify the Customer's Needs</li>
+    <li class="list-group-item sortable" id="sort3"><img src="images/Product Presentation.png" class="img-fluid" alt="Present the Product"> Present the Product</li>
+    <li class="list-group-item sortable" id="sort4"><img src="images/Trial Cloase.png" class="img-fluid" alt="Trial Close"> Trial Close</li>
+    <li class="list-group-item sortable" id="sort5"><img src="images/Handle Objections.png" class="img-fluid" alt="Handle Objections"> Handle Objections</li>
+    <li class="list-group-item sortable" id="sort6"><img src="images/close.png" class="img-fluid" alt="Close"> Close</li>
   </ul>
   <div class="text-center my-2">
     <div id="complete" class="text-center btn btn-primary">DONE</div>
