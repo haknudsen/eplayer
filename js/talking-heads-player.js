@@ -23,7 +23,7 @@ let talkingHeadsVideo = {
 };
 let th = talkingHeadsVideo.player,
   hotspotID,
-  title, curHotspot, hotspot, windowSize, newWidth, sort;
+  title, curHotspot, hotspot, windowSize, newWidth, sort,newSort;
 const progress = $("#progress"),
   volumeBar = $("#volume-bar"),
   holder = talkingHeadsVideo.holder,
@@ -37,7 +37,7 @@ const progress = $("#progress"),
 function createTalkingHead(autostart, controls, color, chapter) {
   //Hotspot creation
   function loadChapter(currentChapter) {
-	  console.log( chapterPath + currentChapter + ".json" );
+    console.log(chapterPath + currentChapter + ".json");
     let json = (function () {
       let json = null;
       $.ajax({
@@ -51,7 +51,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
       });
       return json;
     })();
-	  console.log( json);
+    console.log(json);
     title = json[0].video;
     talkingHeadsVideo.chapter = json[0];
     curHotspot = 0;
@@ -243,10 +243,12 @@ function createTalkingHead(autostart, controls, color, chapter) {
     let progressBar = (player.currentTime / player.duration * 100);
     progress.css("width", progressBar + "%");
     time.text(showTime());
-    if ( talkingHeadsVideo.chapter.sort && player.currentTime > talkingHeadsVideo.chapter.sort.time && talkingHeadsVideo.chapter.sort.shown === false) {
-      console.log(talkingHeadsVideo.chapter.sort);
-      talkingHeadsVideo.chapter.sort.shown = true;
-      setSort();
+    newSort = talkingHeadsVideo.chapter.sort[0];
+    if (newSort) {
+      if (player.currentTime > newSort.time && newSort.shown === false) {
+        newSort.shown = true;
+        setSort();
+      }
     }
     if (curHotspot < talkingHeadsVideo.chapter.hotspots.length) {
       if (player.currentTime > talkingHeadsVideo.chapter.hotspots[curHotspot].time) {
@@ -356,12 +358,13 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function setSort() {
+        console.log(newSort.shown);
     sort = $("#player-holder").append($('<div>', {
       class: 'list-group',
       id: "simpleList"
     }).css({
-      "left": talkingHeadsVideo.chapter.sort.left + "%",
-      "top": talkingHeadsVideo.chapter.sort.top + "%",
+      "left": newSort.left + "%",
+      "top": newSort.top + "%",
       "bottom": "auto",
       "right": "auto"
     }));
