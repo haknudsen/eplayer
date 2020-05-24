@@ -1,31 +1,48 @@
 [{
-  "id": 1,
-  "title": "Learn the Steps",
-  "video": "Sort Steps",
-  "sort": [{
-    "time": 0.5,
-    "top": 0.78,
-    "left": 9.7,
-    "shown": false,
-    "items": [{
-      "Greet": "Greet the Customer",
-      "Identify Needs": "Identify the Customer's Needs",
-      "Product Presentation": "Present the Product",
-      "Trial Close": "Trial Close",
-      "Handle Objections": "Handle Objections",
-      "Close": "Close"
-    }]
-  }],
-    "hotspots": [
+    "id": 1,
+    "title": "Learn the Steps",
+    "video": "Sort Steps",
+    "sort": [{
+      "time": 0.5,
+      "top": 2,
+      "left": 4.84,
+      "width": 52,
+      "height": 74.4,
+      "shown": false,
+      "items": [{
+          "img": "Greet",
+          "text": "Greet the Customer"
+        },
         {
-            "name": "continue",
-            "time": 4.5,
-            "width": 24.6,
-            "height": 13.5,
-            "top": 55.3,
-            "left": 67,
-            "link": "sales process 3",
-            "pause": false
+          "img": "Identify Needs",
+          "text": "Identify the Customer's Needs"
+        },
+        {
+          "img": "Product Presentation",
+          "text": "Present the Product"
+        },
+        {
+          "img": "Trial Close",
+          "text": "Trial Close"
+        },
+        {
+          "img": "Handle Objections",
+          "text": "Handle Objections"
+        },
+        {
+          "img": "Close",
+          "text": "Close"
         }
-    ]
-}]
+      ]
+	} ],
+      "hotspots": [{
+        "name": "continue",
+        "time": 4.5,
+        "width": 24.6,
+        "height": 13.5,
+        "top": 55.3,
+        "left": 67,
+        "link": "sales process 3",
+        "pause": false
+      }]
+    }]

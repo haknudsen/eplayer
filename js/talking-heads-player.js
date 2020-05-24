@@ -23,7 +23,7 @@ let talkingHeadsVideo = {
 };
 let th = talkingHeadsVideo.player,
   hotspotID,
-  title, curHotspot, hotspot, windowSize, newWidth, sort,newSort;
+  title, curHotspot, hotspot, windowSize, newWidth, sort, newSort;
 const progress = $("#progress"),
   volumeBar = $("#volume-bar"),
   holder = talkingHeadsVideo.holder,
@@ -358,7 +358,8 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function setSort() {
-        console.log(newSort.shown);
+    let items = newSort.items[0];
+    console.log(items);
     sort = $("#player-holder").append($('<div>', {
       class: 'list-group',
       id: "simpleList"
@@ -366,12 +367,14 @@ function createTalkingHead(autostart, controls, color, chapter) {
       "left": newSort.left + "%",
       "top": newSort.top + "%",
       "bottom": "auto",
-      "right": "auto"
+      "right": "auto",
+      "width": newSort.width + "%",
+      "height": newSort.height + "%"
     }));
-    Sortable.create(simpleList, {
-      animation: 150,
-      easing: "cubic-bezier(1, 0, 0, 1)"
-    });
+    /*    Sortable.create(simpleList, {
+          animation: 150,
+          easing: "cubic-bezier(1, 0, 0, 1)"
+        });*/
 
   }
 
