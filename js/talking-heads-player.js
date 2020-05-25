@@ -49,6 +49,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
     })();
     title = json[0].video;
     talkingHeadsVideo.chapter = json[0];
+    newSort = talkingHeadsVideo.chapter.sort[0];
     curHotspot = 0;
     restartBar();
   }
@@ -178,7 +179,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
                   playToggle();
                   break;
                 case "score":
-                  console.log("score");
+                  getScore();
                   break;
                 default:
                   var report = event.target.id;
@@ -244,9 +245,9 @@ function createTalkingHead(autostart, controls, color, chapter) {
     let progressBar = (player.currentTime / player.duration * 100);
     progress.css("width", progressBar + "%");
     time.text(showTime());
-    newSort = talkingHeadsVideo.chapter.sort[0];
     if (newSort) {
       if (player.currentTime > newSort.time && newSort.shown === false) {
+        talkingHeadsVideo.chapter.sort.results = {};
         newSort.shown = true;
         setSort();
       }
@@ -452,5 +453,20 @@ function createTalkingHead(autostart, controls, color, chapter) {
     width = width - $("#progress-bar").outerWidth() + 10;
     let progressBarWidth = (talkingHeadsVideo.curWidth - width) + "px";
     progressBar.css("width", progressBarWidth);
+  }
+
+  function getScore() {
+    console.log(newSort.items);
+    let i = 0;
+    while ( i < newSort.items.length) {
+      if (newSort.items[i].id === i) {
+        talkingHeadsVideo.chapter.sort.results[i] = true;
+      } else {
+        talkingHeadsVideo.chapter.sort.results[i] = false;
+      }
+		console.log( i );
+      i++;
+    }
+    console.log(talkingHeadsVideo.chapter.sort.results);
   }
 }

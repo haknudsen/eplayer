@@ -11,26 +11,32 @@
       "height": 74.4,
       "shown": false,
       "items": [{
+		  "id": 0,
           "img": "Greet",
           "text": "Greet the Customer"
         },
         {
+		  "id": 1,
           "img": "Identify Needs",
           "text": "Identify the Customer's Needs"
         },
         {
+		  "id": 2,
           "img": "Product Presentation",
           "text": "Present the Product"
         },
         {
+		  "id": 3,
           "img": "Trial Close",
           "text": "Trial Close"
         },
         {
+		  "id": 4,
           "img": "Handle Objections",
           "text": "Handle Objections"
         },
         {
+		  "id": 5,
           "img": "Close",
           "text": "Close"
         }
