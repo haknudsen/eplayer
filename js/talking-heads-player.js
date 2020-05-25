@@ -113,7 +113,6 @@ function createTalkingHead(autostart, controls, color, chapter) {
   //Start functions--------------------------------------------------
   function tryAutostart() {
     let promise = player.play();
-    console.log(promise);
     if (promise !== undefined) {
       promise.then(_ => {
         showPause();
@@ -375,7 +374,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
     let newItems = shuffle(items);
     let i = 0;
     while (newItems.length > i) {
-      $("#simpleList").append($('<li class="list-group-item sortable"> ', {}));
+      $("#simpleList").append($('<li class="list-group-item sortable" id="' +newItems[i].id + '"> ', {}));
       $("#simpleList").children()[i].innerHTML = '<img class="img-fluid" src="images/' + newItems[i].img + '.png"/> ' + newItems[i].text;
       i++;
       Sortable.create(simpleList, {
@@ -456,15 +455,14 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function getScore() {
-    console.log(newSort.items);
+    let results = $("#simpleList").children();
     let i = 0;
-    while ( i < newSort.items.length) {
-      if (newSort.items[i].id === i) {
+    while (i < results.length) {
+      if (results[i].id - i === 0) {
         talkingHeadsVideo.chapter.sort.results[i] = true;
       } else {
         talkingHeadsVideo.chapter.sort.results[i] = false;
       }
-		console.log( i );
       i++;
     }
     console.log(talkingHeadsVideo.chapter.sort.results);
