@@ -17,13 +17,10 @@ let talkingHeadsVideo = {
     mute: $('#btn-mute'),
     fullscreen: $('#btn-fullscreen')
   },
-  started: false,
-  width: 1280,
-  height: 720
+  started: false
 };
-let th = talkingHeadsVideo.player,
-  hotspotID,
-  title, curHotspot, hotspot, windowSize, newWidth, sort, newSort;
+let th = talkingHeadsVideo.player;
+let title, curHotspot, newWidth, newSort;
 const progress = $("#progress"),
   volumeBar = $("#volume-bar"),
   holder = talkingHeadsVideo.holder,
@@ -175,18 +172,24 @@ function createTalkingHead(autostart, controls, color, chapter) {
             break;
           default:
             if (event.target.className === "hotspot") {
-              if (talkingHeadsVideo.chapter.hotspots[curHotspot - 1].link === "none") {
-                $("#player-holder").find(".hotspot").remove();
-                playToggle();
-              } else {
-                var report = event.target.id;
-                loadChapter(report);
-                talkingHeadsVideo.video = talkingHeadsVideo.path + title + ".mp4";
-                th.attr("src", talkingHeadsVideo.video);
-                player.load();
-                player.play();
-                showPause();
-                $("#player-holder").find(".hotspot").remove();
+              switch (talkingHeadsVideo.chapter.hotspots[curHotspot - 1].link) {
+                case "none":
+                  $("#player-holder").find(".hotspot").remove();
+                  playToggle();
+                  break;
+                case "score":
+                  console.log("score");
+                  break;
+                default:
+                  var report = event.target.id;
+                  loadChapter(report);
+                  talkingHeadsVideo.video = talkingHeadsVideo.path + title + ".mp4";
+                  th.attr("src", talkingHeadsVideo.video);
+                  player.load();
+                  player.play();
+                  showPause();
+                  $("#player-holder").find(".hotspot").remove();
+                  break;
               }
             }
         }
@@ -293,7 +296,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
         s = 0
       }
       if (m.toString().length < 2) {
-        m = m;
+        /*    m = m;*/
       }
       if (s.toString().length < 2) {
         s = '0' + s;
@@ -356,7 +359,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function setSort() {
-    sort = $("#player-holder").append($('<div>', {
+    $("#player-holder").append($('<div>', {
       class: 'list-group',
       id: "simpleList"
     }).css({
@@ -374,12 +377,10 @@ function createTalkingHead(autostart, controls, color, chapter) {
       $("#simpleList").append($('<li class="list-group-item sortable"> ', {}));
       $("#simpleList").children()[i].innerHTML = '<img class="img-fluid" src="images/' + newItems[i].img + '.png"/> ' + newItems[i].text;
       i++;
-
-
-          Sortable.create(simpleList, {
-            animation: 150,
-            easing: "cubic-bezier(1, 0, 0, 1)"
-          });
+      Sortable.create(simpleList, {
+        animation: 150,
+        easing: "cubic-bezier(1, 0, 0, 1)"
+      });
 
     }
   }
@@ -396,7 +397,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function setHotspot(z) {
-    hotspot = $("#player-holder").append($('<div>', {
+    $("#player-holder").append($('<div>', {
       class: 'hotspot',
       id: talkingHeadsVideo.chapter.hotspots[z].link
     }).css({
