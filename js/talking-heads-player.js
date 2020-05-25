@@ -374,7 +374,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
     let newItems = shuffle(items);
     let i = 0;
     while (newItems.length > i) {
-      $("#simpleList").append($('<li class="list-group-item sortable" id="' +newItems[i].id + '"> ', {}));
+      $("#simpleList").append($('<li class="list-group-item sortable" id="' + newItems[i].id + '"> ', {}));
       $("#simpleList").children()[i].innerHTML = '<img class="img-fluid" src="images/' + newItems[i].img + '.png"/> ' + newItems[i].text;
       i++;
       Sortable.create(simpleList, {
@@ -460,8 +460,10 @@ function createTalkingHead(autostart, controls, color, chapter) {
     while (i < results.length) {
       if (results[i].id - i === 0) {
         talkingHeadsVideo.chapter.sort.results[i] = true;
+        $("#simpleList li").eq(i).addClass("bg-gradient-success").removeClass("bg-gradient-danger");
       } else {
         talkingHeadsVideo.chapter.sort.results[i] = false;
+        $("#simpleList li").eq(i).addClass("bg-gradient-danger").removeClass("bg-gradient-success");
       }
       i++;
     }
