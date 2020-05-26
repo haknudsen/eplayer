@@ -471,22 +471,26 @@ function createTalkingHead(autostart, controls, color, chapter) {
       i++;
     }
     $("#simpleList").css({
-      "opacity": 0.9,
-      "font-size": "50%"
+      "opacity": 0.8,
+      "font-size": "50%",
+      "max-width": "25%",
+      "left": "37.5%",
+      "top": "25%"
+    });
+    $(".sortable").css({
+      "padding": ".25rem"
     });
     $(".sortable .img-fluid").css({
       "max-width": "30px",
       "max-height": "30px"
-    })
-    console.log(talkingHeadsVideo.chapter.sort.results);
-    console.log(talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length);
+    });
     if (talkingHeadsVideo.chapter.sort.results.correct < results.length) {
       talkingHeadsVideo.video = talkingHeadsVideo.path + "Almost.mp4";
       th.attr("src", talkingHeadsVideo.video);
       player.load();
       player.play();
       showPause();
-
+      $("#simpleList").append("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length + " Correct!</h4>");
     }
   }
 }
