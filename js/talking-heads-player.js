@@ -478,7 +478,8 @@ function createTalkingHead(autostart, controls, color, chapter) {
       "top": "25%"
     });
     $(".sortable").css({
-      "padding": ".25rem"
+      "padding": ".25rem",
+		"color": "white"
     });
     $(".sortable .img-fluid").css({
       "max-width": "30px",
@@ -490,7 +491,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
       player.load();
       player.play();
       showPause();
-      $("#simpleList").append("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length + " Correct!</h4>");
+      $("#simpleList").prepend("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length + " Correct!</h4>");
     }
   }
 }
