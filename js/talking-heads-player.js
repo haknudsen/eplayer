@@ -178,6 +178,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
                   playToggle();
                   break;
                 case "score":
+                  $("#player-holder").find(".hotspot").remove();
                   getScore();
                   break;
                 default:
@@ -378,7 +379,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
       $("#simpleList").children()[i].innerHTML = '<img class="img-fluid" src="images/' + newItems[i].img + '.png"/> ' + newItems[i].text;
       i++;
       Sortable.create(simpleList, {
-        animation: 150,
+        animation: 250,
         easing: "cubic-bezier(1, 0, 0, 1)"
       });
 
@@ -457,16 +458,35 @@ function createTalkingHead(autostart, controls, color, chapter) {
   function getScore() {
     let results = $("#simpleList").children();
     let i = 0;
+    talkingHeadsVideo.chapter.sort.results.correct = 0;
     while (i < results.length) {
       if (results[i].id - i === 0) {
         talkingHeadsVideo.chapter.sort.results[i] = true;
-        $("#simpleList li").eq(i).addClass("bg-gradient-success").removeClass("bg-gradient-danger");
+        talkingHeadsVideo.chapter.sort.results.correct++;
+        $("#simpleList li").eq(i).delay(500).addClass("bg-gradient-success tada").removeClass("bg-gradient-danger");
       } else {
         talkingHeadsVideo.chapter.sort.results[i] = false;
         $("#simpleList li").eq(i).addClass("bg-gradient-danger").removeClass("bg-gradient-success");
       }
       i++;
     }
+    $("#simpleList").css({
+      "opacity": 0.9,
+      "font-size": "50%"
+    });
+    $(".sortable .img-fluid").css({
+      "max-width": "30px",
+      "max-height": "30px"
+    })
     console.log(talkingHeadsVideo.chapter.sort.results);
+    console.log(talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length);
+    if (talkingHeadsVideo.chapter.sort.results.correct < results.length) {
+      talkingHeadsVideo.video = talkingHeadsVideo.path + "Almost.mp4";
+      th.attr("src", talkingHeadsVideo.video);
+      player.load();
+      player.play();
+      showPause();
+
+    }
   }
 }
