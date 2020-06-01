@@ -1,6 +1,6 @@
 [{
   "id": 1,
-  "title": "Learn the Steps",
+  "title": "Score",
   "video": "Sort Steps",
   "type": "sort",
   "sort": [{
@@ -49,7 +49,16 @@
     "height": 13.5,
     "top": 55.3,
     "left": 67,
-    "link": "score 1",
+    "link": "score",
+    "pause": false
+  }, {
+    "name": "next",
+    "time": 4.9,
+    "width": 16.4,
+    "height": 8.333,
+    "top": 79,
+    "left": 42.1,
+    "link": "sales process 1",
     "pause": false
   }]
 }]
