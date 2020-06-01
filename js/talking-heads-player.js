@@ -473,30 +473,36 @@ function createTalkingHead(autostart, controls, color, chapter) {
         }
         i++;
       }
-      $("#simpleList").css({
-        "opacity": 0.8,
-        "font-size": "50%",
-        "max-width": "25%",
-        "left": "37.5%",
-        "top": "25%"
-      });
-      $(".sortable").css({
-        "padding": ".25rem",
-        "color": "white"
-      });
-      $(".sortable .img-fluid").css({
-        "max-width": "30px",
-        "max-height": "30px"
-      });
-		console.log( results[resultsCounter].correct, sortResults.length );
+      console.log(jQuery.type(results[resultsCounter].correct), jQuery.type(sortResults.length));
+      console.log(results[resultsCounter].correct, sortResults.length);
       if (results[resultsCounter].correct < sortResults.length) {
-        talkingHeadsVideo.video = talkingHeadsVideo.path + "Almost.mp4";
-        th.attr("src", talkingHeadsVideo.video);
-        player.load();
-        player.play();
-        showPause();
+        $("#simpleList").css({
+          "opacity": 0.8,
+          "font-size": "50%",
+          "max-width": "25%",
+          "left": "37.5%",
+          "top": "25%"
+        });
+        $(".sortable").css({
+          "padding": ".25rem",
+          "color": "white"
+        });
+        $(".sortable .img-fluid").css({
+          "max-width": "30px",
+          "max-height": "30px"
+        });
+        title = "Almost";
         $("#simpleList").prepend("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + results[resultsCounter].correct + " of " + sortResults.length + " Correct!</h4>");
+      } else {
+        title = "Correct";
+        $("#simpleList").remove();
       }
+      th.attr("src", title);
+      console.log( title );
+      player.load();
+      player.play();
+      showPause();
+      resultsCounter++;
     }
   }
 }

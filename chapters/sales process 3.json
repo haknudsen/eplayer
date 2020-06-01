@@ -1,0 +1,55 @@
+[{
+  "id": 1,
+  "title": "Learn the Steps",
+  "video": "Sort Steps",
+  "type": "sort",
+  "sort": [{
+    "time": 0.5,
+    "top": 2,
+    "left": 4.84,
+    "width": 52,
+    "height": 74.4,
+    "shown": false,
+    "items": [{
+        "id": 0,
+        "img": "Greet",
+        "text": "Greet the Customer"
+      },
+      {
+        "id": 1,
+        "img": "Identify Needs",
+        "text": "Identify the Customer's Needs"
+      },
+      {
+        "id": 2,
+        "img": "Product Presentation",
+        "text": "Present the Product"
+      },
+      {
+        "id": 3,
+        "img": "Trial Close",
+        "text": "Trial Close"
+      },
+      {
+        "id": 4,
+        "img": "Handle Objections",
+        "text": "Handle Objections"
+      },
+      {
+        "id": 5,
+        "img": "Close",
+        "text": "Close"
+      }
+    ]
+  }],
+  "hotspots": [{
+    "name": "continue",
+    "time": 4.5,
+    "width": 24.6,
+    "height": 13.5,
+    "top": 55.3,
+    "left": 67,
+    "link": "score 1",
+    "pause": false
+  }]
+}]
