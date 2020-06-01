@@ -21,6 +21,7 @@ let talkingHeadsVideo = {
 };
 let th = talkingHeadsVideo.player;
 let results = {};
+let resultsCounter = 0;
 let title, curHotspot, newWidth, newSort;
 const progress = $("#progress"),
   volumeBar = $("#volume-bar"),
@@ -48,7 +49,6 @@ function createTalkingHead(autostart, controls, color, chapter) {
       });
       return json;
     })();
-    console.log(json);
     title = json[0].video;
     talkingHeadsVideo.chapter = json[0];
     if (talkingHeadsVideo.chapter.type === "sort") {
@@ -250,7 +250,6 @@ function createTalkingHead(autostart, controls, color, chapter) {
     time.text(showTime());
     if (newSort) {
       if (player.currentTime > newSort.time && newSort.shown === false) {
-        talkingHeadsVideo.chapter.sort.results = {};
         newSort.shown = true;
         setSort();
       }
@@ -336,8 +335,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
     var r = parseInt(hex.substring(0, 2), 16);
     var g = parseInt(hex.substring(2, 4), 16);
     var b = parseInt(hex.substring(4, 6), 16);
-    var result = 'rgba(' + r + ',' + g + ',' + b + ',' + opacity / 100 + ')';
-    return result;
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + opacity / 100 + ')';
   }
 
   function restartBar() {
@@ -460,16 +458,17 @@ function createTalkingHead(autostart, controls, color, chapter) {
 
   function getScore() {
     if (talkingHeadsVideo.chapter.scoring === "sort") {
-      let results = $("#simpleList").children();
+      let sortResults = $("#simpleList").children();
       let i = 0;
-      talkingHeadsVideo.chapter.sort.results.correct = 0;
-      while (i < results.length) {
-        if (results[i].id - i === 0) {
-          talkingHeadsVideo.chapter.sort.results[i] = true;
-          talkingHeadsVideo.chapter.sort.results.correct++;
+      results[resultsCounter] = {};
+      results[resultsCounter].correct = 0;
+      while (i < sortResults.length) {
+        if (sortResults[i].id - i === 0) {
+          results[resultsCounter][i] = true;
+          results[resultsCounter].correct++;
           $("#simpleList li").eq(i).delay(500).addClass("bg-gradient-success tada").removeClass("bg-gradient-danger");
         } else {
-          talkingHeadsVideo.chapter.sort.results[i] = false;
+          results[resultsCounter][i] = false;
           $("#simpleList li").eq(i).addClass("bg-gradient-danger").removeClass("bg-gradient-success");
         }
         i++;
@@ -489,13 +488,14 @@ function createTalkingHead(autostart, controls, color, chapter) {
         "max-width": "30px",
         "max-height": "30px"
       });
-      if (talkingHeadsVideo.chapter.sort.results.correct < results.length) {
+		console.log( results[resultsCounter].correct, sortResults.length );
+      if (results[resultsCounter].correct < sortResults.length) {
         talkingHeadsVideo.video = talkingHeadsVideo.path + "Almost.mp4";
         th.attr("src", talkingHeadsVideo.video);
         player.load();
         player.play();
         showPause();
-        $("#simpleList").prepend("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length + " Correct!</h4>");
+        $("#simpleList").prepend("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + results[resultsCounter].correct + " of " + sortResults.length + " Correct!</h4>");
       }
     }
   }
