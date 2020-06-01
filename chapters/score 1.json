@@ -1,47 +1,9 @@
 [{
   "id": 1,
   "title": "Score",
-  "video": "Sort Steps",
-  "type": "sort",
-  "sort": [{
-    "time": 0.5,
-    "top": 2,
-    "left": 4.84,
-    "width": 52,
-    "height": 74.4,
-    "shown": false,
-    "items": [{
-        "id": 0,
-        "img": "Greet",
-        "text": "Greet the Customer"
-      },
-      {
-        "id": 1,
-        "img": "Identify Needs",
-        "text": "Identify the Customer's Needs"
-      },
-      {
-        "id": 2,
-        "img": "Product Presentation",
-        "text": "Present the Product"
-      },
-      {
-        "id": 3,
-        "img": "Trial Close",
-        "text": "Trial Close"
-      },
-      {
-        "id": 4,
-        "img": "Handle Objections",
-        "text": "Handle Objections"
-      },
-      {
-        "id": 5,
-        "img": "Close",
-        "text": "Close"
-      }
-    ]
-  }],
+  "video": "Almost",
+  "type": "score",
+  "scoring": "sort",
   "hotspots": [{
     "name": "continue",
     "time": 4.5,
@@ -49,16 +11,7 @@
     "height": 13.5,
     "top": 55.3,
     "left": 67,
-    "link": "score",
-    "pause": false
-  }, {
-    "name": "next",
-    "time": 4.9,
-    "width": 16.4,
-    "height": 8.333,
-    "top": 79,
-    "left": 42.1,
-    "link": "sales process 1",
+    "link": "sales process 3",
     "pause": false
   }]
 }]

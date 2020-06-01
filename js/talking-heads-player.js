@@ -20,6 +20,7 @@ let talkingHeadsVideo = {
   started: false
 };
 let th = talkingHeadsVideo.player;
+let results = {};
 let title, curHotspot, newWidth, newSort;
 const progress = $("#progress"),
   volumeBar = $("#volume-bar"),
@@ -47,9 +48,12 @@ function createTalkingHead(autostart, controls, color, chapter) {
       });
       return json;
     })();
+    console.log(json);
     title = json[0].video;
     talkingHeadsVideo.chapter = json[0];
-    newSort = talkingHeadsVideo.chapter.sort[0];
+    if (talkingHeadsVideo.chapter.type === "sort") {
+      newSort = talkingHeadsVideo.chapter.sort[0];
+    }
     curHotspot = 0;
     restartBar();
   }
@@ -177,13 +181,12 @@ function createTalkingHead(autostart, controls, color, chapter) {
                   $("#player-holder").find(".hotspot").remove();
                   playToggle();
                   break;
-                case "score":
-                  $("#player-holder").find(".hotspot").remove();
-                  getScore();
-                  break;
                 default:
                   var report = event.target.id;
                   loadChapter(report);
+                  if (talkingHeadsVideo.chapter.type === "score") {
+                    getScore();
+                  }
                   talkingHeadsVideo.video = talkingHeadsVideo.path + title + ".mp4";
                   th.attr("src", talkingHeadsVideo.video);
                   player.load();
@@ -456,42 +459,44 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function getScore() {
-    let results = $("#simpleList").children();
-    let i = 0;
-    talkingHeadsVideo.chapter.sort.results.correct = 0;
-    while (i < results.length) {
-      if (results[i].id - i === 0) {
-        talkingHeadsVideo.chapter.sort.results[i] = true;
-        talkingHeadsVideo.chapter.sort.results.correct++;
-        $("#simpleList li").eq(i).delay(500).addClass("bg-gradient-success tada").removeClass("bg-gradient-danger");
-      } else {
-        talkingHeadsVideo.chapter.sort.results[i] = false;
-        $("#simpleList li").eq(i).addClass("bg-gradient-danger").removeClass("bg-gradient-success");
+    if (talkingHeadsVideo.chapter.scoring === "sort") {
+      let results = $("#simpleList").children();
+      let i = 0;
+      talkingHeadsVideo.chapter.sort.results.correct = 0;
+      while (i < results.length) {
+        if (results[i].id - i === 0) {
+          talkingHeadsVideo.chapter.sort.results[i] = true;
+          talkingHeadsVideo.chapter.sort.results.correct++;
+          $("#simpleList li").eq(i).delay(500).addClass("bg-gradient-success tada").removeClass("bg-gradient-danger");
+        } else {
+          talkingHeadsVideo.chapter.sort.results[i] = false;
+          $("#simpleList li").eq(i).addClass("bg-gradient-danger").removeClass("bg-gradient-success");
+        }
+        i++;
       }
-      i++;
-    }
-    $("#simpleList").css({
-      "opacity": 0.8,
-      "font-size": "50%",
-      "max-width": "25%",
-      "left": "37.5%",
-      "top": "25%"
-    });
-    $(".sortable").css({
-      "padding": ".25rem",
-		"color": "white"
-    });
-    $(".sortable .img-fluid").css({
-      "max-width": "30px",
-      "max-height": "30px"
-    });
-    if (talkingHeadsVideo.chapter.sort.results.correct < results.length) {
-      talkingHeadsVideo.video = talkingHeadsVideo.path + "Almost.mp4";
-      th.attr("src", talkingHeadsVideo.video);
-      player.load();
-      player.play();
-      showPause();
-      $("#simpleList").prepend("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length + " Correct!</h4>");
+      $("#simpleList").css({
+        "opacity": 0.8,
+        "font-size": "50%",
+        "max-width": "25%",
+        "left": "37.5%",
+        "top": "25%"
+      });
+      $(".sortable").css({
+        "padding": ".25rem",
+        "color": "white"
+      });
+      $(".sortable .img-fluid").css({
+        "max-width": "30px",
+        "max-height": "30px"
+      });
+      if (talkingHeadsVideo.chapter.sort.results.correct < results.length) {
+        talkingHeadsVideo.video = talkingHeadsVideo.path + "Almost.mp4";
+        th.attr("src", talkingHeadsVideo.video);
+        player.load();
+        player.play();
+        showPause();
+        $("#simpleList").prepend("<h4 class='list-group-item text-center h5 text-secondary bg-transparent py-1'>" + talkingHeadsVideo.chapter.sort.results.correct + " of " + results.length + " Correct!</h4>");
+      }
     }
   }
 }
