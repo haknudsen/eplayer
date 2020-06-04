@@ -54,6 +54,9 @@ function createTalkingHead(autostart, controls, color, chapter) {
     if (talkingHeadsVideo.chapter.type === "sort") {
       newSort = talkingHeadsVideo.chapter.sort[0];
     }
+    if (talkingHeadsVideo.chapter.type === "drag") {
+      createDrops();
+    }
     curHotspot = 0;
     restartBar();
   }
@@ -473,8 +476,6 @@ function createTalkingHead(autostart, controls, color, chapter) {
         }
         i++;
       }
-      console.log(jQuery.type(results[resultsCounter].correct), jQuery.type(sortResults.length));
-      console.log(results[resultsCounter].correct, sortResults.length);
       if (results[resultsCounter].correct < sortResults.length) {
         $("#simpleList").css({
           "opacity": 0.8,
@@ -498,11 +499,25 @@ function createTalkingHead(autostart, controls, color, chapter) {
         $("#simpleList").remove();
       }
       th.attr("src", title);
-      console.log( title );
       player.load();
       player.play();
       showPause();
       resultsCounter++;
     }
+  }
+
+  function createDrops() {
+    console.log(talkingHeadsVideo.chapter.drop[0].items);
+    $("#player-holder").append($('<div>', {
+      class: 'list-inline',
+      id: "simpleList"
+    }).css({
+      "left": talkingHeadsVideo.chapter.drop[0].left + "%",
+      "top": talkingHeadsVideo.chapter.drop[0].top + "%",
+      "bottom": "auto",
+      "right": "auto",
+      "width": talkingHeadsVideo.chapter.drop[0].width + "%",
+      "height": talkingHeadsVideo.chapter.drop[0].height + "%"
+    }));
   }
 }
