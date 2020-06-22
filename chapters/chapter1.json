@@ -1,0 +1,18 @@
+[{
+    "id": 1,
+    "title": "opening",
+    "video": "Part 1",
+    "hotspots": [
+        {
+            "name": "yes",
+            "time": 4.8,
+            "width": 14.8,
+            "height": 11.1,
+            "top": 69,
+            "left": 22.27,
+            "link": "chapter2",
+            "pause": false
+        }
+    ]
+
+}]

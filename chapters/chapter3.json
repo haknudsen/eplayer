@@ -1,0 +1,68 @@
+[{
+    "id": 1,
+    "title": "Types of Video",
+    "video": "Chapter 3",
+    "hotspots": [
+        {
+            "name": "whiteboard",
+            "time": 5,
+            "width": 22.9,
+            "height": 23.6,
+            "top": 4.7,
+            "left": 72.9,
+            "link": "whiteboard-example",
+            "pause": false
+        },
+        {
+            "name": "animation",
+            "time": 5,
+            "width": 22.9,
+            "height": 23.6,
+            "top": 34,
+            "left": 72.9,
+            "link": "animation",
+            "pause": false
+        },
+        {
+            "name": "typography",
+            "time": 5,
+            "width": 22.9,
+            "height": 23.6,
+            "top": 64,
+            "left": 72.9,
+            "link": "typography",
+            "pause": false
+        },
+        {
+            "name": "spokespeople",
+            "time": 5,
+            "width": 22.9,
+            "height": 23.6,
+            "top": 4.7,
+            "left": 4.2,
+            "link": "spokespeople",
+            "pause": false
+        },
+        {
+            "name": "motion",
+            "time": 5,
+            "width": 22.9,
+            "height": 23.6,
+            "top": 34,
+            "left": 4.2,
+            "link": "motion graphics",
+            "pause": false
+        },
+        {
+            "name": "animated photos",
+            "time": 5,
+            "width": 22.9,
+            "height": 23.6,
+            "top": 64,
+            "left": 4.2,
+            "link": "animated photos",
+            "pause": false
+        }
+    ]
+
+}]
