@@ -5,13 +5,14 @@
     "hotspots": [
         {
             "name": "yes",
-            "time": 4.8,
-            "width": 14.8,
-            "height": 11.1,
-            "top": 69,
-            "left": 22.27,
+            "time": 139,
+            "width": 30,
+            "height": 12,
+            "top": 75,
+            "left": 35,
             "link": "chapter2",
-            "pause": false
+            "pause": false,
+            "button": true
         }
     ]
 

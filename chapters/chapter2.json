@@ -1,17 +1,18 @@
 [{
     "id": 1,
-    "title": "Video",
-    "video": "chapter2",
+    "title": "Part 2",
+    "video": "Part 2",
     "hotspots": [
         {
-            "name": "continue",
-            "time": 5,
-            "width": 25.6,
-            "height": 13.9,
-            "top": 43,
-            "left": 36.7,
+            "name": "yes",
+            "time": 53,
+            "width": 30,
+            "height": 12,
+            "top": 75,
+            "left": 35,
             "link": "chapter3",
-            "pause": false
+            "pause": false,
+            "button": true
         }
     ]
 

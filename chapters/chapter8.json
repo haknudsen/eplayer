@@ -1,0 +1,19 @@
+[{
+    "id": 1,
+    "title": "Part 8",
+    "video": "Part 8",
+    "hotspots": [
+        {
+            "name": "yes",
+            "time": 12,
+            "width": 30,
+            "height": 12,
+            "top": 75,
+            "left": 35,
+            "link": "chapter9",
+            "pause": false,
+            "button": true
+        }
+    ]
+
+}]

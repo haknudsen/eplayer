@@ -7,11 +7,11 @@
 <meta name="language" content="English">
 <meta name="revisit-after" content="30 days">
 <meta name="author" content="WebsiteTalkingHeads.com">
-<title>eLearning Videos from Talking Heads&reg;</title>
+<title>StatAlert Interacting Video</title>
 <meta name="title" content="eLearning Videos from Talking Heads">
 <meta name="description" content="We can describe your product, service or procedure in an eLearning Video! Our eLearning Videos focus on your message.">
 <meta name="keywords" content="eLearning Corporate Videos, eLearning Explainer Video, eLearning Explainer Videos, eLearning Whiteboard Videos, eLearning Video, eLearning">
-<?php include("../../../includes/css-b4.php"); ?>
+<?php include("../../includes/css-b4.php"); ?>
 <link href="css/talkingheadsplayer.min.css" rel="stylesheet" type="text/css">
 </head>
 <?php
@@ -32,13 +32,13 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
 }
 ?>
 <body>
-<?php include("../../../includes/header_b4.php"); ?>
 <section class="h-100 w-100 py-2">
+    <h1 class="text-center">StatAlert Interacting Video</h1>
   <div id="elearning-process" class="embed-responsive embed-responsive-16by9">
     <div id="player-holder" class="embed-responsive-item">
       <video autoplay playsinline preload id="talking-head-player" width="100%">
         <preference name="AllowInlineMediaPlayback" value="true" />
-        <p>Your browser does not support the video tag. Please Visit <a href="https://www.websitetalkingheads.com/support/" title="Please Visit Support"> https://www.websitetalkingheads.com/support/ </a> </p>
+        <p>Your browser does not support the video tag.</p>
       </video>
       <div id="bigPlayBtn"></div>
       <div id="controls">
@@ -104,14 +104,17 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
   <div id="form-alt"></div>
   <h3 class="text-center text-monospace" id="timeReporter"></h3>
 </section>
-<?php include("../../../includes/footer_b4.php"); ?>
-<script async src="js/talking-heads-player.js"></script> 
+<!--Java Script-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="js/talking-heads-player.js"></script> 
 <script async src="js/form.js"></script> 
 <script src="js/Sortable.min.js"></script> 
 <script async src="js/jquery-sortable.js"></script> 
 <script>
     $( document ).ready( function () {
-        createTalkingHead( "yes","mouse","#499FDE", "sales process 1" );
+        createTalkingHead( "yes","mouse","#499FDE", "chapter1" );
     } );
 </script>
 </body>

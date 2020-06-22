@@ -1,12 +1,18 @@
 [{
     "id": 1,
-    "title": "Conclusion",
-    "video": "Part 11",
+    "title": "Part 4",
+    "video": "Part 4",
     "hotspots": [
         {
-            "name": "form",
-            "time": 9,
-            "link": "form"
+            "name": "yes",
+            "time": 27,
+            "width": 30,
+            "height": 12,
+            "top": 75,
+            "left": 35,
+            "link": "chapter5",
+            "pause": false,
+            "button": true
         }
     ]
 

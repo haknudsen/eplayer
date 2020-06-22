@@ -257,7 +257,12 @@ p {
   border: thin solid #00A2FF;
   position: absolute;
   cursor: pointer;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 2rem;
 }
+.hotspot:hover{opacity: 0.7;}
 #video-contact {
   position: absolute;
   top: auto;

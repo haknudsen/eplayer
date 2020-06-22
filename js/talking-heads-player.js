@@ -22,7 +22,7 @@ let talkingHeadsVideo = {
 let th = talkingHeadsVideo.player;
 let results = {};
 let resultsCounter = 0;
-let title, curHotspot, newWidth, newSort;
+let title, curHotspot, newWidth, newSort, report;
 const progress = $("#progress"),
   volumeBar = $("#volume-bar"),
   holder = talkingHeadsVideo.holder,
@@ -36,6 +36,7 @@ const progress = $("#progress"),
 function createTalkingHead(autostart, controls, color, chapter) {
   //Hotspot creation
   function loadChapter(currentChapter) {
+/*     console.log( currentChapter );*/
     let json = (function () {
       let json = null;
       $.ajax({
@@ -177,6 +178,9 @@ function createTalkingHead(autostart, controls, color, chapter) {
           case "progress-bar":
             changeTime(event.offsetX);
             break;
+          case "continue":
+            goContinue();
+            break;
           default:
             if (event.target.className === "hotspot") {
               switch (talkingHeadsVideo.chapter.hotspots[curHotspot - 1].link) {
@@ -185,17 +189,12 @@ function createTalkingHead(autostart, controls, color, chapter) {
                   playToggle();
                   break;
                 default:
-                  var report = event.target.id;
+                  report = event.target.id;
                   loadChapter(report);
                   if (talkingHeadsVideo.chapter.type === "score") {
                     getScore();
                   }
-                  talkingHeadsVideo.video = talkingHeadsVideo.path + title + ".mp4";
-                  th.attr("src", talkingHeadsVideo.video);
-                  player.load();
-                  player.play();
-                  showPause();
-                  $("#player-holder").find(".hotspot").remove();
+                  goContinue();
                   break;
               }
             }
@@ -274,6 +273,13 @@ function createTalkingHead(autostart, controls, color, chapter) {
             }
           } else {
             setHotspot(curHotspot);
+            if (talkingHeadsVideo.chapter.hotspots[curHotspot].button) {
+              $(".hotspot").append("<p id='continue'>continue</p>");
+              $(".hotspot").css({
+                "border-radius": ".5rem",
+                "border": "solid thin" + color
+              });
+            }
             curHotspot++;
           }
         }
@@ -284,7 +290,7 @@ function createTalkingHead(autostart, controls, color, chapter) {
   function showTime() {
     let cur = getTime(player.currentTime);
     let dur = getTime(player.duration);
-    $("#timeReporter").text(player.currentTime)
+   /* $("#timeReporter").text(player.currentTime);*/
     return cur + "/" + dur;
   }
   //get time - used for current time and duration
@@ -509,7 +515,6 @@ function createTalkingHead(autostart, controls, color, chapter) {
   }
 
   function createDrops() {
-    console.log(talkingHeadsVideo.chapter.drop[0].items);
     $("#player-holder").append($('<div>', {
       class: 'list-inline',
       id: "simpleList"
@@ -521,5 +526,15 @@ function createTalkingHead(autostart, controls, color, chapter) {
       "width": talkingHeadsVideo.chapter.drop[0].width + "%",
       "height": talkingHeadsVideo.chapter.drop[0].height + "%"
     }));
+  }
+
+  function goContinue() {
+    loadChapter(talkingHeadsVideo.chapter.hotspots[curHotspot - 1].link);
+    talkingHeadsVideo.video = talkingHeadsVideo.path + title + ".mp4";
+    th.attr("src", talkingHeadsVideo.video);
+    player.load();
+    player.play();
+    showPause();
+    $("#player-holder").find(".hotspot").remove();
   }
 }
