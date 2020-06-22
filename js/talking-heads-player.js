@@ -257,23 +257,25 @@ function createTalkingHead(autostart, controls, color, chapter) {
         setSort();
       }
     }
-    if (curHotspot < talkingHeadsVideo.chapter.hotspots.length) {
-      if (player.currentTime > talkingHeadsVideo.chapter.hotspots[curHotspot].time) {
-        if (talkingHeadsVideo.chapter.hotspots[curHotspot].pause) {
-          timedPause();
-        }
-        if (talkingHeadsVideo.chapter.hotspots[curHotspot].link === "form") {
-          if (talkingHeadsVideo.curWidth < 900 && !talkingHeadsVideo.showingForm) {
-            talkingHeadsVideo.showForm = true;
-            altForm();
-          } else {
-            $("#video-contact").css({
-              "display": "inline"
-            });
+    if (talkingHeadsVideo.chapter.hotspots) {
+      if (curHotspot < talkingHeadsVideo.chapter.hotspots.length) {
+        if (player.currentTime > talkingHeadsVideo.chapter.hotspots[curHotspot].time) {
+          if (talkingHeadsVideo.chapter.hotspots[curHotspot].pause) {
+            timedPause();
           }
-        } else {
-          setHotspot(curHotspot);
-          curHotspot++;
+          if (talkingHeadsVideo.chapter.hotspots[curHotspot].link === "form") {
+            if (talkingHeadsVideo.curWidth < 900 && !talkingHeadsVideo.showingForm) {
+              talkingHeadsVideo.showForm = true;
+              altForm();
+            } else {
+              $("#video-contact").css({
+                "display": "inline"
+              });
+            }
+          } else {
+            setHotspot(curHotspot);
+            curHotspot++;
+          }
         }
       }
     }
