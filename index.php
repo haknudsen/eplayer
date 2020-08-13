@@ -7,7 +7,7 @@
 <meta name="language" content="English">
 <meta name="revisit-after" content="30 days">
 <meta name="author" content="WebsiteTalkingHeads.com">
-<title>StatAlert Interacting Video</title>
+<title>StatAlert Interactive Video</title>
 <meta name="title" content="eLearning Videos from Talking Heads">
 <meta name="description" content="We can describe your product, service or procedure in an eLearning Video! Our eLearning Videos focus on your message.">
 <meta name="keywords" content="eLearning Corporate Videos, eLearning Explainer Video, eLearning Explainer Videos, eLearning Whiteboard Videos, eLearning Video, eLearning">
@@ -33,7 +33,7 @@ if ( isset( $_SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) && $_SERVER[ 'HTTP_X_FORWARTDED
 ?>
 <body>
 <section class="h-100 w-100 py-2">
-    <h1 class="text-center">StatAlert Interacting Video</h1>
+    <h1 class="text-center">StatAlert Interactive Video</h1>
   <div id="elearning-process" class="embed-responsive embed-responsive-16by9">
     <div id="player-holder" class="embed-responsive-item">
       <video autoplay playsinline preload id="talking-head-player" width="100%">
